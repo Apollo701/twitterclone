@@ -7,6 +7,11 @@ class User < ApplicationRecord
 
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
-                                  dependent: :destroy
+                                  dependent:   :destroy
   has_many :following, through: :active_relationships, source: :followed
+
+  has_many :other_tweets,         class_name:  "Retweet",
+                                  foreign_key: "retweeter_id",
+                                  dependent:   :destroy
+  has_many :retweets, through: :other_tweets, source: :tweet
 end

@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :retweet do
+    tweet_id 1
+    retweeter_id 1
+  end
   factory :relationship do
     follower_id 1
     followed_id 1
