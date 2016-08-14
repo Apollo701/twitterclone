@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :tagged_tweet do
+    tweet_id 1
+    tag_id 1
+  end
+  factory :tag do
+    tag "MyString"
+  end
   factory :favorite do
     tweet_id 1
     user_id 1
