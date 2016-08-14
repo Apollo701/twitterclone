@@ -14,4 +14,9 @@ class User < ApplicationRecord
                                   foreign_key: "retweeter_id",
                                   dependent:   :destroy
   has_many :retweets, through: :other_tweets, source: :tweet
+
+  has_many :favorite_tweets,      class_name:  "Favorite",
+                                  foreign_key: "user_id",
+                                  dependent:   :destroy
+  has_many :favorites, through: :favorite_tweets, source: :tweet
 end
