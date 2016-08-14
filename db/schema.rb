@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814052219) do
+ActiveRecord::Schema.define(version: 20160814220717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,36 @@ ActiveRecord::Schema.define(version: 20160814052219) do
     t.index ["tweet_id", "user_id"], name: "index_favorites_on_tweet_id_and_user_id", unique: true, using: :btree
     t.index ["tweet_id"], name: "index_favorites_on_tweet_id", using: :btree
     t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
+  end
+
+  create_table "list_members", force: :cascade do |t|
+    t.integer  "list_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id", "user_id"], name: "index_list_members_on_list_id_and_user_id", unique: true, using: :btree
+    t.index ["list_id"], name: "index_list_members_on_list_id", using: :btree
+    t.index ["user_id"], name: "index_list_members_on_user_id", using: :btree
+  end
+
+  create_table "list_subscribers", force: :cascade do |t|
+    t.integer  "list_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id", "user_id"], name: "index_list_subscribers_on_list_id_and_user_id", unique: true, using: :btree
+    t.index ["list_id"], name: "index_list_subscribers_on_list_id", using: :btree
+    t.index ["user_id"], name: "index_list_subscribers_on_user_id", using: :btree
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_lists_on_author_id", using: :btree
+    t.index ["name", "author_id"], name: "index_lists_on_name_and_author_id", unique: true, using: :btree
+    t.index ["name"], name: "index_lists_on_name", using: :btree
   end
 
   create_table "relationships", force: :cascade do |t|

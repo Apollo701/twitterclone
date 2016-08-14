@@ -1,4 +1,16 @@
 FactoryGirl.define do
+  factory :list_subscriber do
+    list_id 1
+    user_id 1
+  end
+  factory :list_member do
+    list_id 1
+    user_id 1
+  end
+  factory :list do
+    name "MyString"
+    author_id 1
+  end
   factory :tagged_tweet do
     tweet_id 1
     tag_id 1
