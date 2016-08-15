@@ -7,3 +7,19 @@
 
 @import "base/base";
 @import "refills/flashes";
+
+.bigbox {
+  @include outer-container;
+}
+
+.tweet-feed {
+  text-align: center;
+}
+
+.row {
+  @include row();
+}
+
+.tweet {
+  padding: 10px 0px
+}

@@ -1,3 +1,5 @@
-<div id="tweet-feed">
-  <%= tweet.tweet %>
+<div id="row">
+  <div class="tweet">
+    <%= link_to(tweet.user.username, user_path(tweet.user)) %>: <%= tweet.tweet %>
+  </div>
 </div>
