@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
   has_many :passive_relationships, class_name:  "Relationship",
                                    foreign_key: "followed_id",
                                    dependent:   :destroy
