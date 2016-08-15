@@ -1,5 +1,9 @@
 class User < ApplicationRecord
+  has_secure_password
+
   has_many :tweets, dependent: :destroy
+  accepts_nested_attributes_for :tweets
+
   has_many :passive_relationships, class_name:  "Relationship",
                                    foreign_key: "followed_id",
                                    dependent:   :destroy

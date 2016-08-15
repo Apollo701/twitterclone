@@ -1,0 +1,7 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :password, error: 'No special characters.' %>
+  <%= f.input :password_confirmation, error: 'Matches password.' %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Create Tweet:</h1>
+<%= simple_form_for @tweet do |f| %>
+  <%= f.hidden_field :user_id, value: params[:id] %>
+  <%= f.input :tweet %>
+  <%= f.button :submit %>
+<% end %>
