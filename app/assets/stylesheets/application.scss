@@ -9,17 +9,22 @@
 @import "refills/flashes";
 
 .bigbox {
-  @include outer-container;
+  @include outer-container
 }
 
 .tweet-feed {
-  text-align: center;
+  text-align: center
 }
 
 .row {
-  @include row();
+  @include row()
 }
 
 .tweet {
   padding: 10px 0px
 }
+
+.col-3 {
+  @include span-columns(3)
+}
+

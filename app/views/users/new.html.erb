@@ -1,7 +1,10 @@
-<%= simple_form_for @user do |f| %>
-  <%= f.input :username, label: 'Username', error: 'Input a Username' %>
-  <%= f.input :email, placeholder: 'user@twitterclone.com' %>
-  <%= f.input :password, error: 'No special characters' %>
-  <%= f.input :password_confirmation, error: 'Must match password' %>
-  <%= f.button :submit %>
-<% end %>
+<div class="col-3">
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :username, label: 'Username', error: 'Input a Username' %>
+    <%= f.input :email, placeholder: 'user@twitterclone.com' %>
+    <%= f.input :password, error: 'No special characters' %>
+    <%= f.input :password_confirmation, error: 'Must match password' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
